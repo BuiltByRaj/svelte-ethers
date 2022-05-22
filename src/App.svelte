@@ -1,12 +1,41 @@
 <script>
-  let chainId = -1;
-  let walletAddress = -1;
-  let darkTheme = false;
+  import { ethers, providers } from "ethers";
+
+  let provider;
+  $: walletAddress = "No wallet connected";
+  let signer;
+  let darkTheme = true;
   function changeTheme() {
     darkTheme = !darkTheme;
   }
-  function connectWallet() {
-    walletAddress = walletAddress * -1;
+
+  async function connectWalletMetamask() {
+    try {
+      const provider = new providers.Web3Provider(window.ethereum, "any");
+      await provider.send("eth_requestAccounts", []);
+      const signer = provider.getSigner();
+      (async function () {
+        walletAddress = await signer.getAddress();
+      })();
+    } catch {
+      alert(
+        "Error connecting with metamask. Please try clearing cache or refreshing the page"
+      );
+    }
+  }
+  async function connectWalletWalletConnect() {
+    // try {
+    //   const provider = new providers.Web3Provider(window.ethereum, "any");
+    //   await provider.send("eth_requestAccounts", []);
+    //   const signer = provider.getSigner();
+    //   (async function () {
+    //     walletAddress = await signer.getAddress();
+    //   })();
+    // } catch {
+    //   alert(
+    //     "Error connecting with WalletConnect. Please try clearing cache or refreshing the page"
+    //   );
+    // }
   }
 </script>
 
@@ -24,14 +53,15 @@
     />
     <div class="px-1">🌑</div>
   </div>
-
   <div class="py-12">
-    <button class="btn btn-secondary" on:click={connectWallet}
+    <button class="btn btn-primary" on:click={connectWalletMetamask}
       >Connect with Metamask</button
     >
+    <!-- <button class="btn btn-primary" on:click={connectWalletWalletConnect}
+      >Connect with WalletConnect</button
+    > -->
   </div>
-
-  <p>Wallet Connected = {walletAddress}</p>
+  <p>{walletAddress}</p>
 </main>
 
 <style global lang="postcss">

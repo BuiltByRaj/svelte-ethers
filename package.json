@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "daisyui": "^2.15.0",
+    "ethers": "^5.6.6",
     "theme-change": "^2.0.2"
   }
 }
