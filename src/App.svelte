@@ -1,7 +1,7 @@
 <script>
   let chainId = -1;
   let walletAddress = -1;
-  let darkTheme = true;
+  let darkTheme = false;
   function changeTheme() {
     darkTheme = !darkTheme;
   }
@@ -16,7 +16,12 @@
 >
   <div class="absolute top-3 right-1 flex">
     <div class="px-1">☀</div>
-    <input on:click={changeTheme} type="checkbox" class="toggle" checked />
+    <input
+      bind:checked={darkTheme}
+      on:click={changeTheme}
+      type="checkbox"
+      class="toggle"
+    />
     <div class="px-1">🌑</div>
   </div>
 
