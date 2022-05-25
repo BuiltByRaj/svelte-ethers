@@ -6,9 +6,9 @@ A simple website built with svelte, that connects wallet providers that inject e
 
 ## Screenshots
 
-![Lightmode Connect Button](https://i.ibb.co/frB8yy3/connect-light.png)
-![Lightmode Error](https://i.ibb.co/N2n7WNn/error-light.png)
-![Lightmode Wallet Connected](https://i.ibb.co/7YgLNPG/connected-light.png)
-![Darkmode Connect Button](https://i.ibb.co/pdPMkjY/connect-dark.png)
-![Darkmode Error](https://i.ibb.co/XjJW5ss/error-dark.png)
-![Darkmode Wallet Connected](https://i.ibb.co/R4Q8CY8/connected-dark.png)
+![Lightmode Connect Button](https://i.postimg.cc/T3bgXwQs/connect-light.png)
+![Lightmode Error](https://i.postimg.cc/xdSHj241/error-light.png)
+![Lightmode Wallet Connected](https://i.postimg.cc/pX4z78Q8/connected-light.png)
+![Darkmode Connect Button](https://i.postimg.cc/QN6pQvHf/connect-dark.png)
+![Darkmode Error](https://i.postimg.cc/cJM3rbpM/error-dark.png)
+![Darkmode Wallet Connected](https://i.postimg.cc/VLdXD4tm/connected-dark.png)
